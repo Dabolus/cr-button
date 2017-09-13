@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>cr-button demo</title>
+
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+  <link rel="import" href="../cr-button.html">
+
+  <custom-style>
+    <style is="custom-style" include="demo-pages-shared-styles">
+      div.container {
+        text-align: center;
+      }
+
+      cr-button {
+        margin: 16px;
+      }
+    </style>
+  </custom-style>
+</head>
+<body>
+<div class="vertical-section-container centered">
+  <h3>Basic demo</h3>
+  <demo-snippet>
+    <template>
+      <div class="container">
+        <cr-button id="battle">Battle</cr-button>
+        <script>
+          var battle = document.getElementById('battle');
+          battle.addEventListener('click', function () {
+            battle.error = !battle.error;
+            battle.innerText = battle.innerText === 'Battle' ? 'Cancel' : 'Battle';
+          });
+        </script>
+      </div>
+    </template>
+  </demo-snippet>
+  <h3>Buttons can be styled in many different ways</h3>
+  <demo-snippet>
+    <template>
+      <div class="container">
+        <cr-button>Normal</cr-button>
+        <cr-button success>Success</cr-button>
+        <cr-button info>Info</cr-button>
+        <cr-button error>Error</cr-button>
+        <cr-button disabled>Disabled</cr-button>
+      </div>
+    </template>
+  </demo-snippet>
+  <h3>Buttons can also have different sizes</h3>
+  <demo-snippet>
+    <template>
+      <div class="container">
+        <cr-button small>Small</cr-button>
+        <cr-button>Normal</cr-button>
+        <cr-button large>Large</cr-button>
+      </div>
+    </template>
+  </demo-snippet>
+  <h3>Buttons can also be used as toggles</h3>
+  <demo-snippet>
+    <template>
+      <div class="container">
+        <cr-button small toggles>Untoggled</cr-button>
+        <cr-button small toggles active>Toggled</cr-button>
+        <cr-button small toggles active disabled>Disabled</cr-button>
+      </div>
+    </template>
+  </demo-snippet>
+</div>
+</body>
+</html>
