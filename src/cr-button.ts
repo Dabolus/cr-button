@@ -18,7 +18,7 @@
  * @polymer
  * @demo demo/index.html
  */
-export class CRButton extends HTMLButtonElement {
+export class CRButton extends HTMLElement {
   /**
    * If true, the button is styled as a green (success) button.
    */
@@ -408,4 +408,4 @@ export class CRButton extends HTMLButtonElement {
   }
 }
 
-window.customElements.define('cr-button', CRButton, { extends: 'button' });
+window.customElements.define('cr-button', CRButton);
